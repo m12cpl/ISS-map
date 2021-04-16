@@ -1,0 +1,61 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+html,
+body,
+#mapid {
+  height: 100%;
+  width: 100vw;
+}
+
+.transparent {
+  width: 500px;
+  position: absolute;
+  right: 1%;
+  top: 1%;
+  transform: translate(0%, 0%);
+  background-color: rgba(204, 204, 204, 0.5);
+  border-radius: 15px;
+  padding: 10px;
+}
+.grid-container {
+  display: grid;
+  border: 0px solid red;
+}
+.tekst {
+  float: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+}
+.cyferki {
+  color: black;
+}
+.literki {
+  color: white;
+}
+.zerwanie {
+  color: red;
+}
+.ostatnie {
+  color: green;
+}
+.button {
+  outline: none;
+  font-family: "Open Sans", sans-serif;
+  font-size: 13px;
+  background-color: #dddddd;
+  color: black;
+  padding: 5px 10px 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border: none;
+  border-radius: 50px 15px;
+}
+.button:hover {
+  background-color: #bbbbbb;
+  color: white;
+  border: none;
+}
