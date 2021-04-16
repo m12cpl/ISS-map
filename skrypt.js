@@ -21,12 +21,12 @@ function onLocationFound(e) {
   let radius = e.accuracy;
   L.marker(e.latlng)
     .addTo(mymap)
-    .bindPopup("Jesteś w promieniu " + radius + " metrów od tego punktu.");
+    .bindPopup("Jesteś w promieniu " + radius.toFixed(0) + " metrów od tego punktu.");
     // .openPopup();
   L.circle(e.latlng, radius).addTo(mymap);
 }
 function onLocationError(e) {
-  alert("Użytkownik nie pozwolił na lokalizację.");
+  alert("Użytkownik nie pozwolił na ujawnienie lokalizacji.");
   // alert("Geolocation error: User denied Geolocation.");
   // alert(e.message);
 }
