@@ -9,22 +9,36 @@ body,
   width: 100vw;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 .transparent {
-  width: 500px;
+  z-index: 3;
+  width: 275px;
   position: absolute;
   right: 1%;
   top: 1%;
-  transform: translate(0%, 0%);
   background-color: rgba(204, 204, 204, 0.5);
   border-radius: 15px;
   padding: 10px;
 }
-.grid-container {
-  display: grid;
-  border: 0px solid red;
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+  float: left;
+  padding: 5px;
 }
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .transparent {width: 490px;}
+  .col-1 {width: 210px; border: 0px solid green;}
+  .col-2 {width: 255px; border: 0px solid red;}
+}
+
 .tekst {
-  float: none;
   font-family: "Open Sans", sans-serif;
   font-size: 13px;
 }

@@ -1,37 +1,38 @@
 <!doctype html>
 <html lang="pl">
+
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ISS</title>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin="" />
   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <div style="z-index: 3; position: absolute;" class="transparent">
-    <div class="grid-container">
-      <div class="grid-item">
-        <div id="zerwanie" class="tekst zerwanie"></div>
-        <div id="ostatnie" class="tekst ostatnie"></div>
-        <div class="tekst">
-          <span class="literki">Szerokość geograficzna: </span><span class="cyferki" id="lat"></span><br />
-          <span class="literki">Wysokość geograficzna: </span><span class="cyferki" id="lon"></span><br />
-          <span class="literki">Prędkość: </span><span class="cyferki" id="vel"></span><br />
-          <span class="literki">Wysokość: </span><span class="cyferki" id="alt"></span><br />
-          <span class="literki">Zoom: </span><span class="cyferki" id="zoom"></span><br />
-          <span class="tekst literki">ISS</span> <span class="cyferki">v1.11</span> <span class="literki">© 2021 12c.pl</span>
-        </div>
+  <div class="transparent">
+    <div class="col-1">
+      <div id="zerwanie" class="tekst zerwanie"></div>
+      <div id="ostatnie" class="tekst ostatnie"></div>
+      <div class="tekst">
+        <span class="literki">Szerokość geograficzna: </span><span class="cyferki" id="lat"></span><br />
+        <span class="literki">Wysokość geograficzna: </span><span class="cyferki" id="lon"></span><br />
+        <span class="literki">Prędkość: </span><span class="cyferki" id="vel"></span><br />
+        <span class="literki">Wysokość: </span><span class="cyferki" id="alt"></span><br />
+        <span class="literki">Zoom: </span><span class="cyferki" id="zoom"></span><br />
+        <span class="tekst literki">ISS</span> <span class="cyferki">v1.12</span> <span class="literki">© 2021 12c.pl</span>
       </div>
-      <div class="grid-item" style="position: relative;">
-        <div style="position: absolute; right: 0px; bottom: 0px;">
-          <button class="button" onclick="zmien_ikonke()">Zmień ikonkę</button>
-          <button id="swoboda" class="button" onclick="zmien_swobode()"></button>
-        </div>
+    </div>
+    <div class="col-2">
+      <div>
+        <button class="button" onclick="zmien_ikonke()">Zmień ikonkę</button>
+        <button id="swoboda" class="button" onclick="zmien_swobode()"></button>
       </div>
     </div>
   </div>
   <div style="z-index: 1;" class="mapa" id="mapid"></div>
   <script src="skrypt.js"></script>
 </body>
+
 </html>
