@@ -21,8 +21,10 @@ function onLocationFound(e) {
   let radius = e.accuracy;
   L.marker(e.latlng)
     .addTo(mymap)
-    .bindPopup("Jesteś w promieniu " + radius.toFixed(0) + " metrów od tego punktu.");
-    // .openPopup();
+    .bindPopup(
+      "Jesteś w promieniu " + radius.toFixed(0) + " metrów od tego punktu."
+    );
+  // .openPopup();
   L.circle(e.latlng, radius).addTo(mymap);
 }
 function onLocationError(e) {
@@ -101,8 +103,8 @@ async function getISS() {
   const response = await fetch(api_url);
   const { latitude, longitude, velocity, altitude } = await response.json();
   if (!response.ok) {
-    document.getElementById("zerwanie").textContent =
-      "Houston, mamy problem. Błąd połączenia. Poczekaj.";
+    document.getElementById("zerwanie").innerHTML =
+      "Houston, mamy problem.<br />Błąd połączenia. Poczekaj.";
     document.getElementById("ostatnie").textContent =
       "Ostatnie dane, jeśli dostępne:";
   }
@@ -128,4 +130,4 @@ async function getISS() {
 }
 // console.log("test2");
 getISS();
-setInterval(getISS, 1500);
+setInterval(getISS);

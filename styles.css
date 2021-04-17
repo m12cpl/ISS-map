@@ -14,8 +14,8 @@ body,
 }
 
 .transparent {
-  z-index: 3;
-  width: 275px;
+  z-index: 2;
+  width: auto;
   position: absolute;
   right: 1%;
   top: 1%;
@@ -23,19 +23,24 @@ body,
   border-radius: 15px;
   padding: 10px;
 }
-
-/* For mobile phones: */
-[class*="col-"] {
-  width: 100%;
-  float: left;
-  padding: 5px;
+.col-1 {
+  width: auto;
+  border: 0px solid green;
+}
+.col-2 {
+  width: auto;
+  border: 0px solid red;
+  white-space: nowrap;
 }
 
 @media only screen and (min-width: 768px) {
   /* For desktop: */
-  .transparent {width: 490px;}
-  .col-1 {width: 210px; border: 0px solid green;}
-  .col-2 {width: 255px; border: 0px solid red;}
+  .col-1 {
+    float: left;
+  }
+  .col-2 {
+    float: left;
+  }
 }
 
 .tekst {
