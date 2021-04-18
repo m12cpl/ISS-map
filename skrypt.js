@@ -130,4 +130,4 @@ async function getISS() {
 }
 // console.log("test2");
 getISS();
-setInterval(getISS);
+setInterval(getISS, 1100);
