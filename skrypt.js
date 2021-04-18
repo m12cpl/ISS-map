@@ -98,10 +98,14 @@ document.getElementById("lon").textContent = "brak danych";
 document.getElementById("vel").textContent = "brak danych";
 document.getElementById("alt").textContent = "brak danych";
 
+let lat_global = 52;
+let lon_global = 19;
 const api_url = "https://api.wheretheiss.at/v1/satellites/25544";
 async function getISS() {
   const response = await fetch(api_url);
   const { latitude, longitude, velocity, altitude } = await response.json();
+  lat_global = latitude;
+  lon_global = longitude;
   if (!response.ok) {
     document.getElementById("zerwanie").innerHTML =
       "Houston, mamy problem.<br />Błąd połączenia. Poczekaj.";
@@ -119,15 +123,25 @@ async function getISS() {
       velocity.toFixed(2) + "<span style='color: white;'> km/h</span>";
     document.getElementById("alt").innerHTML =
       altitude.toFixed(2) + "<span style='color: white;'> km</span>";
-    if (swoboda === 0) {
-      mymap.setView([latitude, longitude]);
-    }
     marker.setLatLng([latitude, longitude]);
   }
-  const z = mymap.getZoom();
-  document.getElementById("zoom").textContent = z;
   // console.log(swoboda);
 }
 // console.log("test2");
 getISS();
 setInterval(getISS, 1100);
+
+function focusISS() {
+  if (swoboda === 0) {
+    mymap.setView([lat_global, lon_global]);
+  }
+}
+focusISS();
+setInterval(focusISS);
+
+function ustal_zoom() {
+  const z = mymap.getZoom();
+  document.getElementById("zoom").textContent = z;
+}
+ustal_zoom();
+setInterval(ustal_zoom);
